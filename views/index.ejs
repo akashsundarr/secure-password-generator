@@ -101,19 +101,22 @@
 
   <!-- Inline JavaScript -->
   <script>
-    // JavaScript from script.js
     function copyToClipboard() {
-      const passwordElement = document.getElementById("password");
-      const password = passwordElement.textContent;
-
-      navigator.clipboard.writeText(password).then(() => {
-        alert("Password copied to clipboard!");
-      }).catch(err => {
-        console.error("Failed to copy password:", err);
-      });
+      const passwordElement = document.querySelector(".password-output");
+      const password = passwordElement ? passwordElement.textContent : '';
+  
+      if (password && password !== "Click a button to generate a password.") {
+        navigator.clipboard.writeText(password).then(() => {
+          alert("Password copied to clipboard!");
+        }).catch(err => {
+          console.error("Failed to copy password:", err);
+        });
+      } else {
+        alert("Please generate a password first.");
+      }
     }
   </script>
-</head>
+  
 <body>
   <div class="container">
     <h1 class="main-title">Secure Password Generator</h1>
