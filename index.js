@@ -1,12 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
-import path from 'path';
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Workaround for __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // Adjust path to your views folder
-
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views")); // Adjust path to your views folder
 
 app.use(express.static("public"));
 
@@ -15,8 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 
 app.post("/medium-password", (req, res) => {
   const medium = mediumPasswords[Math.floor(Math.random() * mediumPasswords.length)];
@@ -39,12 +41,10 @@ app.post("/very-high-password", (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });
-
-
 
   const mediumPasswords = [
     "Alpha2023", "Code1234", "TechWorld", "Secure99", "Magic456",
