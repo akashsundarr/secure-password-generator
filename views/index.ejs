@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Password Generator</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-title">Secure Password Generator</h1>
+
+    <p class="description"><strong>Generated Password:</strong></p>
+    <p id="password" class="password-placeholder">
+      Click a button to generate a password.
+    </p>
+
+    <div class="button-container">
+      <form action="/medium-password" method="post">
+        <button type="submit" name="strength" value="medium" class="password-btn">Generate Medium Password</button>
+      </form>
+
+      <form action="/high-password" method="post">
+        <button type="submit" name="strength" value="high" class="password-btn">Generate High Password</button>
+      </form>
+
+      <form action="/very-high-password" method="post">
+        <button type="submit" name="strength" value="very-high" class="password-btn">Generate Very High Password</button>
+      </form>
+    </div>
+
+    <div id="generatedPassword" class="generated-password">
+      <strong>Generated Password: </strong>
+      
+      <% if (locals.mediumpass) { %>
+        <h2 class="password-output">Generated: <%= mediumpass %></h2>
+      <% } %>
+      
+      <% if (locals.highpass) { %>
+        <h2 class="password-output">Generated: <%= highpass %></h2>
+      <% } %>
+      
+      <% if (locals.veryhighpass) { %>
+        <h2 class="password-output">Generated: <%= veryhighpass %></h2>
+      <% } %>
+    </div>
+    
+    <!-- Copy to Clipboard Button -->
+    <button id="copyBtn" class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+  </div>
+
+  
+  </div>
+
+  
+
+  <!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="footer">
+  <p class="footer-text">
+    © 2025 Akash Sundar. All rights reserved.
+  </p>
+</footer>
+<script src="/js/script.js"></script>
+</body>
+</html>
