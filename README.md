@@ -82,7 +82,7 @@ secure-password-generator/
 ## 🌍 Live Demo
 
 Check out the live version here:\
-👉 [Secure Password Generator](https://secure-password-generator-8a36d0dh2-akash-sundars-projects.vercel.app)
+👉 [Secure Password Generator](https://secure-password-generator-e5w862a02-akash-sundars-projects.vercel.app)
 
 ---
 
