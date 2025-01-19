@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions"  # Directory for functions
+  publish = "public"               # Directory for your static files
+
+[[redirects]]
+  from = "/api/*"  # Routes all API calls to Netlify Functions
+  to = "/.netlify/functions/:splat"
+  status = 200
