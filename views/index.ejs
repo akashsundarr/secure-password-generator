@@ -4,14 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secure Password Generator</title>
- 
-   
-    <!-- Favicon link -->
-    <link type="image/png" sizes="16x16" rel="icon" href="/favicon/icons8-favicon-16.png">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/script.js" type="module"></script>
   
-   
+  <!-- Inline CSS -->
+  <style>
+    /* CSS from style.css */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-title {
+      text-align: center;
+      color: #333;
+    }
+
+    .description {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .password-placeholder {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+    }
+
+    .button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 15px; 
+}
+
+    .password-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .password-btn:hover {
+      background: #0056b3;
+    }
+
+    .generated-password {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .password-output {
+      font-size: 18px;
+      color: green;
+    }
+
+    .copy-btn {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #218838;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background: #333;
+      color: white;
+    }
+
+    .footer-text {
+      margin: 0;
+    }
+  </style>
+
+  <!-- Inline JavaScript -->
+  <script>
+    // JavaScript from script.js
+    function copyToClipboard() {
+      const passwordElement = document.getElementById("password");
+      const password = passwordElement.textContent;
+
+      navigator.clipboard.writeText(password).then(() => {
+        alert("Password copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy password:", err);
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="container">
@@ -56,18 +157,11 @@
     <button id="copyBtn" class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
   </div>
 
-  
-  </div>
-
-  
-
   <!-- Footer Section -->
-<!-- Footer Section -->
-<footer class="footer">
-  <p class="footer-text">
-    © 2025 Akash Sundar. All rights reserved.
-  </p>
-</footer>
-
+  <footer class="footer">
+    <p class="footer-text">
+      © 2025 Akash Sundar. All rights reserved.
+    </p>
+  </footer>
 </body>
 </html>
