@@ -2,20 +2,13 @@
   "name": "password-generator",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "node index.js",                    
-    "dev": "nodemon index.js",                   
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'No build step for this app'"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "ejs": "^3.1.10",
     "nodemon": "^3.1.9"
   }
 }
