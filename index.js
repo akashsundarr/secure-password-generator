@@ -3,6 +3,9 @@ import bodyParser from "body-parser";
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); // Adjust path to your views folder
+
 
 app.use(express.static("public"));
 
@@ -11,6 +14,8 @@ app.get("/", (req, res) => {
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+
 
 app.post("/medium-password", (req, res) => {
   const medium = mediumPasswords[Math.floor(Math.random() * mediumPasswords.length)];
